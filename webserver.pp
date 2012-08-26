@@ -8,7 +8,8 @@ user { 'onemedia':
 file { 'testfile':
   path    => '/home/onemedia/testfile',
   ensure  => present,
-  mode    => 0666,
+  mode    => 0777,
+  owner => 'onemedia',
   content => "#!/bin/bash\necho 'I am a test file'",
   require => User['onemedia']
 }
